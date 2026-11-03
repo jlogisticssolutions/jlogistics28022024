@@ -21,14 +21,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
-      - name: Check required website files
+      - name: Check required website and discovery files
         run: |
           test -f index.html
           test -f css/style.css
           test -f css/responsive.css
+          test -f css/accessibility.css
+          test -f robots.txt
+          test -f sitemap.xml
       - name: Check for retired vulnerable library references
         run: |
-          if grep -R -n -E 'js/jquery\.1\.11\.1\.js|js/bootstrap\.js|css/bootstrap\.css' --include='*.html' .; then
+          if grep -R -n -E 'js/jquery\\.1\\.11\\.1\\.js|js/bootstrap\\.js|css/bootstrap\\.css' --include='*.html' .; then
             echo "A retired local library reference remains."
             exit 1
           fi
@@ -36,3 +39,69 @@ jobs:
             echo "An insecure Google Fonts URL remains."
             exit 1
           fi
+      - name: Validate page accessibility basics
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import sys
+
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids = set()
+                  self.skip_targets = []
+                  self.has_main = False
+                  self.has_skip = False
+                  self.images_without_alt = 0
+                  self.lang = None
+                  self.title = False
+                  self.description = False
+                  self.in_title = False
+              def handle_starttag(self, tag, attrs):
+                  a = dict(attrs)
+                  if a.get("id"):
+                      self.ids.add(a["id"])
+                  if tag == "html":
+                      self.lang = a.get("lang")
+                  if tag == "main" or a.get("role") == "main":
+                      self.has_main = True
+                  if tag == "a" and "skip-link" in a.get("class", "").split():
+                      self.has_skip = True
+                      self.skip_targets.append(a.get("href", "").lstrip("#"))
+                  if tag == "img" and "alt" not in a:
+                      self.images_without_alt += 1
+                  if tag == "meta" and a.get("name", "").lower() == "description" and a.get("content", "").strip():
+                      self.description = True
+                  if tag == "title":
+                      self.in_title = True
+              def handle_endtag(self, tag):
+                  if tag == "title":
+                      self.title = True
+                      self.in_title = False
+
+          errors = []
+          for path in sorted(Path(".").glob("*.html")):
+              if path.name == "000index.html":
+                  continue
+              parser = Page()
+              parser.feed(path.read_text(encoding="utf-8", errors="replace"))
+              if not parser.lang:
+                  errors.append(f"{path}: missing html lang")
+              if not parser.title:
+                  errors.append(f"{path}: missing title")
+              if not parser.description:
+                  errors.append(f"{path}: missing meta description")
+              if not parser.has_main:
+                  errors.append(f"{path}: missing main landmark")
+              if not parser.has_skip:
+                  errors.append(f"{path}: missing skip link")
+              if parser.skip_targets and any(t not in parser.ids for t in parser.skip_targets):
+                  errors.append(f"{path}: skip link target does not exist")
+              if parser.images_without_alt:
+                  errors.append(f"{path}: {parser.images_without_alt} image(s) missing alt attribute")
+          if errors:
+              print("\n".join(errors))
+              sys.exit(1)
+          print("Accessibility basics passed for all published HTML pages.")
+          PY
