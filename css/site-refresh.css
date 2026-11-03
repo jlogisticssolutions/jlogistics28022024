@@ -1,0 +1,99 @@
+/* JEM Logistics Solutions - refreshed pages */
+:root{--jem-navy:#092b4c;--jem-blue:#075b9a;--jem-gold:#f5ad35;--jem-ink:#183247;--jem-muted:#647789;--jem-paper:#f4f7fa}
+body{color:var(--jem-ink);font-family:'Muli',Arial,sans-serif;background:#fff}
+#top-menu{border-top:4px solid var(--jem-blue);padding:10px 0;background:#fff}
+#top-menu .logo{display:inline-block;height:auto;margin:4px 0 8px;padding:0}
+#top-menu .logo img{max-width:225px;max-height:78px}
+#top-menu .top-links{margin:12px 0 0}
+#top-menu .top-contact ol{padding-left:0}
+#top-menu .top-contact ol li{font-weight:600;color:#40566a;margin-left:12px}
+#top-menu .top-contact a{color:var(--jem-blue)}
+#main-menu{background:var(--jem-navy);min-height:52px}
+#main-menu .navbar-nav>li>a{padding:17px 14px 15px;color:#fff;font-size:12px;letter-spacing:.35px}
+#main-menu .navbar-nav>li>a:hover,#main-menu .navbar-nav>.active>a{color:var(--jem-gold)!important;background:transparent}
+#main-menu .navbar-toggle{margin-top:9px}
+.jem-hero{position:relative;min-height:510px;display:flex;align-items:center;overflow:hidden;background:var(--jem-navy)}
+.jem-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.jem-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,27,49,.88),rgba(4,27,49,.55) 58%,rgba(4,27,49,.2))}
+.jem-hero .container{position:relative;z-index:1}
+.jem-hero-copy{max-width:720px;padding:80px 0;color:#fff}
+.jem-kicker{display:inline-block;color:var(--jem-gold);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:12px;margin-bottom:18px}
+.jem-hero h1{font-family:'Raleway',Arial,sans-serif;font-size:clamp(38px,5.2vw,66px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;text-transform:none;margin:0 0 20px;color:#fff}
+.jem-hero p{font-size:18px;line-height:1.7;max-width:610px;color:rgba(255,255,255,.9);margin-bottom:28px}
+.jem-actions{display:flex;gap:13px;flex-wrap:wrap}
+.jem-btn{display:inline-block;padding:14px 25px;border-radius:4px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;font-size:12px;transition:.2s}
+.jem-btn-primary{background:var(--jem-gold);color:#102d45;border:2px solid var(--jem-gold)}
+.jem-btn-primary:hover{background:#ffc45f;border-color:#ffc45f;color:#102d45}
+.jem-btn-outline{border:2px solid rgba(255,255,255,.8);color:#fff}
+.jem-btn-outline:hover{background:#fff;color:var(--jem-navy)}
+.jem-trust-strip{background:var(--jem-navy);color:#fff;padding:19px 0}
+.jem-trust-strip .trust-item{padding:7px 18px;border-right:1px solid rgba(255,255,255,.18);font-weight:700;text-align:center}
+.jem-trust-strip .trust-item:last-child{border:0}
+.jem-section{padding:76px 0}
+.jem-section-soft{background:var(--jem-paper)}
+.jem-eyebrow{color:var(--jem-blue);font-size:12px;letter-spacing:1.8px;font-weight:800;text-transform:uppercase;margin-bottom:12px}
+.jem-section h2{font-size:32px;line-height:1.2;letter-spacing:-.7px;color:var(--jem-navy);margin:0 0 17px}
+.jem-lead{font-size:17px;line-height:1.8;color:var(--jem-muted)}
+.jem-service-card{height:100%;background:#fff;border:1px solid #e7edf2;border-radius:8px;overflow:hidden;margin-bottom:25px;box-shadow:0 8px 24px rgba(10,42,70,.06);transition:transform .2s,box-shadow .2s}
+.jem-service-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,42,70,.12)}
+.jem-service-card img{width:100%;height:185px;object-fit:cover}
+.jem-service-card .service-copy{padding:21px}
+.jem-service-card h3{font-size:17px;font-weight:800;color:var(--jem-navy);margin:0 0 10px}
+.jem-service-card p{font-size:14px;line-height:1.7;color:var(--jem-muted);min-height:70px}
+.jem-service-card a{font-weight:800;color:var(--jem-blue);font-size:13px}
+.jem-about-panel{padding:34px;background:#fff;border-left:4px solid var(--jem-gold);box-shadow:0 12px 34px rgba(10,42,70,.07);border-radius:5px}
+.jem-about-panel p{font-size:16px;line-height:1.85;color:var(--jem-muted)}
+.jem-cta-band{padding:54px 0;background:linear-gradient(120deg,#082744,#075b9a);color:#fff}
+.jem-cta-band h2{font-size:28px;color:#fff;line-height:1.25;margin:0 0 10px}
+.jem-cta-band p{color:rgba(255,255,255,.82);margin:0}
+#en-footer{background:#071f35;color:#c9d5df}
+#en-footer .footer-content{padding:54px 0 30px}
+#en-footer .widget-title h4{color:#fff}
+#en-footer .widget-title hr{border-color:var(--jem-gold);width:42px;margin-left:0}
+#en-footer a{color:#d7e2eb}
+#en-footer a:hover{color:var(--jem-gold)}
+#en-footer p{font-size:13px;line-height:1.8}
+#en-footer .bottom-footer{background:#041626;padding:17px 0;color:#9fb1c0;font-size:12px}
+.jem-page-hero{background:linear-gradient(120deg,rgba(5,34,59,.96),rgba(7,91,154,.9)),url('../img/slider/2.jpg') center/cover;padding:55px 0;color:#fff}
+.jem-page-hero h1{font-size:34px;letter-spacing:-.5px;line-height:1.2;margin:0 0 8px;color:#fff}
+.jem-page-hero p{margin:0;color:rgba(255,255,255,.82);font-size:15px}
+.jem-form-section{padding:58px 0 75px;background:var(--jem-paper)}
+.jem-form-card{background:#fff;border-radius:10px;box-shadow:0 14px 40px rgba(8,40,68,.09);padding:34px;border:1px solid #e8eef3}
+.jem-form-card h2{font-size:24px;color:var(--jem-navy);margin:0 0 8px}
+.jem-form-card .form-intro{color:var(--jem-muted);font-size:14px;line-height:1.7;margin-bottom:25px}
+.jem-form-card label{font-size:12px;font-weight:800;color:#304a60;margin-bottom:7px}
+.jem-form-card .form-control{height:46px;border:1px solid #d7e0e8;border-radius:5px;box-shadow:none;padding:10px 13px}
+.jem-form-card textarea.form-control{height:auto;min-height:135px;resize:vertical}
+.jem-form-card .form-control:focus{border-color:var(--jem-blue);box-shadow:0 0 0 3px rgba(7,91,154,.1)}
+.jem-form-card .form-group{margin-bottom:18px}
+.jem-form-submit{background:var(--jem-blue);color:#fff;border:0;border-radius:4px;padding:13px 23px;font-weight:800;text-transform:uppercase;letter-spacing:.4px}
+.jem-form-submit:hover{background:var(--jem-navy);color:#fff}
+.jem-form-note{font-size:12px;color:#758697;line-height:1.65;margin:16px 0 0}
+.jem-contact-panel{background:var(--jem-navy);color:#fff;border-radius:10px;padding:30px;height:100%}
+.jem-contact-panel h3{color:#fff;font-size:21px;margin:0 0 16px}
+.jem-contact-panel p,.jem-contact-panel li{color:rgba(255,255,255,.82);font-size:14px;line-height:1.8}
+.jem-contact-panel a{color:#ffd078}
+.jem-contact-panel ul{padding:0;list-style:none;margin:20px 0}
+.jem-contact-panel li{margin:0 0 15px}
+.jem-contact-panel i{width:22px;color:var(--jem-gold)}
+.jem-alert{padding:12px 15px;border-radius:5px;margin-bottom:18px;font-size:13px;display:none}
+.jem-alert.is-visible{display:block}
+.jem-alert-info{background:#fff7e8;color:#77500d;border:1px solid #f5d99f}
+.jem-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.jem-form-grid .full{grid-column:1/-1}
+.jem-consent{font-size:12px;color:#63778a;line-height:1.6}
+@media(max-width:767px){
+ #top-menu .logo img{max-width:190px}
+ #top-menu .top-links{text-align:center;margin:5px 0}
+ #top-menu .top-contact ol li{display:block;margin:5px 0}
+ .jem-hero{min-height:460px}
+ .jem-hero-copy{padding:65px 15px}
+ .jem-hero p{font-size:16px}
+ .jem-trust-strip .trust-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.15)}
+ .jem-section{padding:52px 0}
+ .jem-section h2{font-size:27px}
+ .jem-form-card{padding:23px}
+ .jem-form-grid{display:block}
+ .jem-page-hero{padding:42px 0}
+ .jem-page-hero h1{font-size:29px}
+}
