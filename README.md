@@ -1,5 +1,17 @@
-# jwebsite
-JEM LOGISTICS SOLUTIONS
-Jem Logistics Solutions is a Mumbai based licensed Custom broking Agent, International Freight Forwarder, and Transportation providing number of services in various sphere of imports and exports. Backed with experience of nearly two decades in this industry, we present ourselves as a one stop solution for all logistics questions.
+# JEM Logistics Solutions
 
-As a Clearing Agent we are well versed with updated customs regulations and procedures and backed by experience of over 20 years, we can handle clearance of Import / Export shipments with ease and efficiency through committed and highly qualified personnels, We have a head office in Mumbai
+Jem Logistics Solutions is a Mumbai based licensed Custom broking Agent,
+International Freight Forwarder, and Transportation provider offering
+services across imports and exports. The company has extensive experience in
+supply chain, freight forwarding and logistics.
+
+## Security and maintenance
+
+- This repository contains a static website hosted through GitHub Pages.
+- Keep browser libraries pinned to explicit versions and use Subresource
+  Integrity (SRI) for third-party CDN assets.
+- Review GitHub Actions and Dependabot pull requests regularly.
+- Do not commit passwords, API keys, SMTP credentials, or customer data.
+- GitHub Pages does not execute PHP. Any form-processing backend must be
+  hosted separately and configured securely.
+- See [SECURITY.md](SECURITY.md) for private vulnerability reporting.
