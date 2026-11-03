@@ -44,7 +44,7 @@ jobs:
 
       - name: Reject placeholder links and validate accordion controls
         run: |
-          if grep -R -n -E 'href=["\\x27]#["\\x27]' --include='*.html' .; then
+          if grep -R -n 'href="#"' --include='*.html' . || grep -R -n "href='#'" --include='*.html' .; then
             echo "A placeholder href=\"#\" link remains."
             exit 1
           fi
