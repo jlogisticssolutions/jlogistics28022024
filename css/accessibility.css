@@ -4,3 +4,10 @@
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid #f5ad35!important;outline-offset:3px!important}
 [role="main"]:focus,main:focus{outline:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Keyboard-operable legacy content accordions. */
+.acc-toggle{display:block;width:100%;padding:11px 20px;text-align:left;font:inherit;font-size:16px;font-weight:600;color:#727272;background:transparent;border:1px solid #ddd;cursor:pointer}
+.acc-trigger.active .acc-toggle{background:#ddd}
+.acc-toggle:hover{background:#eee}
+.acc-toggle:focus-visible{outline:3px solid #f5ad35!important;outline-offset:3px!important}
+.acc-container[hidden]{display:none!important}
