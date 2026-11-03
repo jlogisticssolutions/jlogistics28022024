@@ -29,6 +29,8 @@ jobs:
           test -f css/accessibility.css
           test -f robots.txt
           test -f sitemap.xml
+      - name: Check JavaScript syntax
+        run: node --check js/main.js
       - name: Check for retired vulnerable library references
         run: |
           if grep -R -n -E 'js/jquery\\.1\\.11\\.1\\.js|js/bootstrap\\.js|css/bootstrap\\.css' --include='*.html' .; then
@@ -39,6 +41,45 @@ jobs:
             echo "An insecure Google Fonts URL remains."
             exit 1
           fi
+
+      - name: Reject placeholder links and validate accordion controls
+        run: |
+          if grep -R -n 'href="#"' --include='*.html' . || grep -R -n "href='#'" --include='*.html' .; then
+            echo "A placeholder href=\"#\" link remains."
+            exit 1
+          fi
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import sys
+
+          class AccordionCheck(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids = set()
+                  self.buttons = []
+              def handle_starttag(self, tag, attrs):
+                  a = dict(attrs)
+                  if a.get("id"):
+                      self.ids.add(a["id"])
+                  if tag == "button" and "acc-toggle" in a.get("class", "").split():
+                      self.buttons.append(a)
+
+          errors = []
+          for path in sorted(Path(".").glob("*.html")):
+              parser = AccordionCheck()
+              parser.feed(path.read_text(encoding="utf-8", errors="replace"))
+              for button in parser.buttons:
+                  target = button.get("aria-controls")
+                  if button.get("type") != "button" or button.get("aria-expanded") not in ("true", "false") or not target:
+                      errors.append(f"{path}: accordion button lacks required accessible attributes")
+                  elif target not in parser.ids:
+                      errors.append(f"{path}: accordion target {target!r} does not exist")
+          if errors:
+              print("\\n".join(errors))
+              sys.exit(1)
+          print("No placeholder links found; accordion controls passed.")
+          PY
       - name: Validate page accessibility basics
         run: |
           python3 - <<'PY'
