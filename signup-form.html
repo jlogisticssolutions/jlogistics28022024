@@ -16,13 +16,14 @@
 <main class="jem-form-section"><div class="container"><div class="row">
   <div class="col-md-7 col-md-offset-1"><div class="jem-form-card"><h2>Resource registration</h2><p class="form-intro">Tell us a little about yourself. Our team can use these details to follow up about relevant resources and information.</p>
     <div id="signup-status" class="jem-alert jem-alert-info" role="status" aria-live="polite"></div>
-    <form id="jem-signup-form" action="mailto:info@jemlogisticssolutions.com" method="post" enctype="text/plain">
+    <form id="jem-signup-form" action="https://formspree.io/f/xrppodnn" method="POST" accept-charset="UTF-8">
+      <input type="hidden" name="_subject" value="JEM Website - Resource Signup">
       <div class="form-group"><label for="signup-name">Full name *</label><input class="form-control" id="signup-name" name="Name" type="text" autocomplete="name" required maxlength="100" placeholder="Your full name"></div>
       <div class="form-group"><label for="signup-email">Email address *</label><input class="form-control" id="signup-email" name="Email" type="email" autocomplete="email" required maxlength="150" placeholder="name@company.com"></div>
       <div class="form-group"><label for="signup-mobile">Mobile number *</label><input class="form-control" id="signup-mobile" name="Mobile" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+() -]{10,18}" required maxlength="18" placeholder="+91 98765 43210"><span class="help-block">Include your country code if you are outside India.</span></div>
       <div class="checkbox"><label class="jem-consent"><input type="checkbox" name="Consent" value="I agree to be contacted by JEM Logistics Solutions regarding resources and relevant updates." required> I agree that JEM Logistics Solutions may contact me about relevant resources and updates. *</label></div>
       <button class="jem-form-submit" type="submit">Register interest <i class="fa fa-arrow-right"></i></button>
-      <p class="jem-form-note">This temporary email-based submission opens your device's email application. A secure hosted form endpoint must be connected for direct website registration. Please do not submit sensitive personal or financial information.</p>
+      <p class="jem-form-note">Your registration details will be sent to JEM Logistics Solutions through our hosted form service. This registers your interest; it does not automatically create an account or unlock restricted content. Please do not submit sensitive personal or financial information.</p>
     </form>
   </div></div>
   <div class="col-md-3"><aside class="jem-contact-panel"><h3>What happens next?</h3><ul><li><i class="fa fa-check-circle"></i> Your details help us understand your resource interest.</li><li><i class="fa fa-envelope"></i> Our team can follow up using your preferred contact details.</li><li><i class="fa fa-shield"></i> We ask only for the information needed to respond.</li></ul><p>Questions? <a href="mailto:info@jemlogisticssolutions.com">Email our team</a>.</p></aside></div>
