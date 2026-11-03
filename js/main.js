@@ -131,6 +131,17 @@ function main() {
 	  }
 	});
 
+
+    /* Accessible content accordions used on reference pages. */
+    $(document).on("click", ".acc-toggle", function () {
+        var $button = $(this);
+        var expanded = $button.attr("aria-expanded") === "true";
+        var $panel = $("#" + $button.attr("aria-controls"));
+        $button.attr("aria-expanded", String(!expanded));
+        $button.closest(".acc-trigger").toggleClass("active", !expanded);
+        $panel.prop("hidden", expanded);
+    });
+
 }());
 
 
