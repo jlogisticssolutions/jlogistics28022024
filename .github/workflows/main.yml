@@ -29,6 +29,8 @@ jobs:
           test -f css/accessibility.css
           test -f robots.txt
           test -f sitemap.xml
+      - name: Check JavaScript syntax
+        run: node --check js/main.js
       - name: Check for retired vulnerable library references
         run: |
           if grep -R -n -E 'js/jquery\\.1\\.11\\.1\\.js|js/bootstrap\\.js|css/bootstrap\\.css' --include='*.html' .; then
