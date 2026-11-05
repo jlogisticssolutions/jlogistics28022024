@@ -17,19 +17,25 @@
 <nav id="main-menu" class="navbar navbar-default" aria-label="Primary navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myMenu" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button></div><div class="collapse navbar-collapse" id="myMenu"><ul class="nav navbar-nav"><li><a href="index.html">Home</a></li><li><a href="about-us.html">About Us</a></li><li><a href="air-freight-forwarding.html">Services</a></li><li><a href="signup-form.html">Resources</a></li><li class="active"><a href="contact-us.html">Contact Us</a></li></ul></div></div></nav>
 <header class="jem-page-hero"><div class="container"><div class="jem-eyebrow" style="color:#ffd078">Let's talk logistics</div><h1>How can we help move your business?</h1><p>Share your requirement and our team will be happy to discuss the next step.</p></div></header>
 <main id="main-content" tabindex="-1" class="jem-form-section"><div class="container"><div class="row">
-  <div class="col-md-7"><div class="jem-form-card"><h2>Send us an enquiry</h2><p class="form-intro">Complete the details below so we can understand your requirement. Fields marked * are required.</p>
+  <div class="col-md-7"><div class="jem-form-card"><h2>Send us an enquiry</h2><p class="form-intro">Complete the details below. Your enquiry will be sent to our team, with a WhatsApp notification through our configured Formspree integration. Fields marked * are required.</p>
     <div id="form-status" class="jem-alert jem-alert-info" role="status" aria-live="polite"></div>
     <form id="jem-contact-form" action="https://formspree.io/f/xrppodnn" method="POST" accept-charset="UTF-8">
-      <input type="hidden" name="_subject" value="JEM Website - Contact Enquiry">
+      <input type="hidden" name="_subject" value="JEM Website - New WhatsApp / Contact Enquiry">
+      <input type="hidden" name="Enquiry source" value="JEM Logistics Solutions Website - Contact Us">
       <div class="jem-form-grid">
         <div class="form-group"><label for="contact-name">Full name *</label><input class="form-control" id="contact-name" name="Name" type="text" autocomplete="name" required maxlength="100" placeholder="Your full name"></div>
         <div class="form-group"><label for="contact-email">Business email *</label><input class="form-control" id="contact-email" name="Email" type="email" autocomplete="email" required maxlength="150" placeholder="name@company.com"></div>
-        <div class="form-group"><label for="contact-phone">Phone number</label><input class="form-control" id="contact-phone" name="Phone" type="tel" autocomplete="tel" maxlength="20" placeholder="+91"></div>
+        <div class="form-group"><label for="contact-phone">Mobile / WhatsApp number *</label><input class="form-control" id="contact-phone" name="Mobile / WhatsApp number" type="tel" autocomplete="tel" required maxlength="20" placeholder="+91 98765 43210"></div>
+        <div class="form-group"><label for="contact-company">Company name</label><input class="form-control" id="contact-company" name="Company name" type="text" autocomplete="organization" maxlength="150" placeholder="Your company name (optional)"></div>
         <div class="form-group"><label for="contact-subject">Enquiry type *</label><select class="form-control" id="contact-subject" name="Enquiry type" required><option value="">Select a service</option><option>Air Freight Forwarding</option><option>Sea Freight Forwarding – FCL / LCL</option><option>Customs Clearance</option><option>Project Cargo</option><option>Land Transportation</option><option>Warehousing & Distribution</option><option>Re-Export Shipments</option><option>Other</option></select></div>
         <div class="form-group full"><label for="contact-message">How can we assist? *</label><textarea class="form-control" id="contact-message" name="Message" required maxlength="4000" placeholder="Please share your origin, destination, cargo details or any other information that will help us understand your requirement."></textarea></div>
       </div>
-      <button class="jem-form-submit" type="submit">Prepare enquiry <i class="fa fa-arrow-right"></i></button>
-      <p class="jem-form-note">Your enquiry will be sent to JEM Logistics Solutions through our hosted form service. Please do not include sensitive personal or financial information.</p>
+      <div class="jem-consent form-group">
+        <div class="checkbox"><label for="contact-consent"><input id="contact-consent" type="checkbox" name="Consent to contact" value="I agree to be contacted by JEM Logistics Solutions regarding this enquiry by phone, WhatsApp or email." required> I agree to be contacted by JEM Logistics Solutions regarding this enquiry by phone, WhatsApp or email. *</label></div>
+        <div class="checkbox"><label for="marketing-consent"><input id="marketing-consent" type="checkbox" name="Marketing consent" value="I agree to receive marketing communications, promotional emails and business updates."> I would also like to receive marketing communications, promotional emails and business updates. (Optional)</label></div>
+      </div>
+      <button class="jem-form-submit" type="submit">Submit enquiry <i class="fa fa-whatsapp" aria-hidden="true"></i></button>
+      <p class="jem-form-note">Your enquiry will be processed through Formspree and forwarded using the WhatsApp notification configured for JEM Logistics Solutions. Marketing updates are optional and require your separate consent. Please do not include sensitive personal or financial information.</p>
     </form>
   </div></div>
   <div class="col-md-5"><aside class="jem-contact-panel"><h3>JEM Logistics Solutions</h3><p>Speak with our team about your freight forwarding and logistics requirements.</p>
