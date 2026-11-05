@@ -1360,3 +1360,9 @@ a:hover, a:focus, a.read-more, a.read-more>span, .widget li:hover a, .widget li:
   .jem-whatsapp-float{left:15px;bottom:16px;width:54px;height:54px}
   .jem-whatsapp-float svg{width:29px;height:29px}
 }
+
+/* Google Business Profile link */
+.jem-google-business-link{display:inline-block;margin:12px 0;padding:8px 14px;border:1px solid #d8e0e7;border-radius:4px;color:#145a8d!important;background:#fff;font-weight:600;text-decoration:none!important}
+.jem-google-business-link:hover,.jem-google-business-link:focus{background:#f3f7fa;color:#0b3d63!important;text-decoration:underline!important}
+.jem-google-business-link .fa{margin-right:7px}
+.jem-google-business-wrap{text-align:center;padding:8px 12px}
